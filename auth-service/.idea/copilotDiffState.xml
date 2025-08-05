@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/internal/model/user.go">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/internal/model/user.go" />
+              <option name="originalContent" value="package model&#10;&#10;&#10;type User struct { &#10;&#9;ID uint gorm:&quot;primaryKey;autoIncrement&quot; &#10;Username string gorm:&quot;size:100;not null;unique&quot; &#10;PasswordHash string gorm:&quot;size:255;not null&quot; &#10;Email string gorm:&quot;size:150;unique&quot; &#10;CreatedAt time.Time gorm:&quot;autoCreateTime&quot;&#10;}&#10;&#10;" />
+              <option name="updatedContent" value="package model&#10;&#10;&#10;type User struct {&#10;&#9;ID           uint      `gorm:&quot;primaryKey;autoIncrement&quot;`&#10;&#9;Username     string    `gorm:&quot;size:100;not null;unique&quot;`&#10;&#9;PasswordHash string    `gorm:&quot;size:255;not null&quot;`&#10;&#9;Email        string    `gorm:&quot;size:150;unique&quot;`&#10;&#9;CreatedAt    time.Time `gorm:&quot;autoCreateTime&quot;`&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
