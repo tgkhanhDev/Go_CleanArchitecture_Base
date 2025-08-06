@@ -1,0 +1,1 @@
+Implement interfaces from port/ (adapters). This layer depends on application/port, not the other way around.
