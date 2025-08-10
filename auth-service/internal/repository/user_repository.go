@@ -1,8 +1,6 @@
 package repository
 
-import (
-	"gin/internal/domain/model"
-)
+import model "gin/internal/models"
 
 type UserRepository interface {
 	GetById(id int64) (*model.User, error)

@@ -1,1 +1,0 @@
-Purpose: Implement interfaces from /application/port/ (adapters). This layer depends on application/port, not the other way around.

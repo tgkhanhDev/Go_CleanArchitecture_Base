@@ -2,13 +2,19 @@ package persistence
 
 import (
 	"database/sql"
-	"gin/internal/domain/model"
-	"gin/internal/domain/repository"
+	model "gin/internal/models"
+	"gin/internal/repository"
 )
 
 type PgUserRepository struct {
 	// db *gorm.DB // Uncomment if you need a database connection
 	DB *sql.DB
+}
+
+func NewUserRepository(db *sql.DB) repository.UserRepository {
+	return &PgUserRepository{
+		DB: db,
+	}
 }
 
 func (p PgUserRepository) GetById(id int64) (*model.User, error) {
