@@ -6,5 +6,5 @@ import (
 
 type UserRepository interface {
 	GetById(id int64) (*model.User, error)
-	Save(user *model.User) error
+	Save(user *model.User) (*model.User, error)
 }

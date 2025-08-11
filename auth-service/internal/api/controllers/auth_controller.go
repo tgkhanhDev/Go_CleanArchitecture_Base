@@ -5,7 +5,6 @@ import (
 	service "gin/internal/infrastructure/services"
 	apiRes "gin/pkg/response"
 	"github.com/gin-gonic/gin"
-	"io"
 	"net/http"
 )
 
@@ -20,15 +19,6 @@ func NewAuthController(authService service.AuthService) *AuthController {
 func (ac *AuthController) LoginHandler(ctx *gin.Context) {
 
 	var req request.LoginRequest
-
-	// Check body rỗng
-	bodyBytes, _ := io.ReadAll(ctx.Request.Body)
-	if len(bodyBytes) == 0 {
-		ctx.JSON(http.StatusBadRequest, gin.H{
-			"message": "Request body is empty",
-		})
-		return
-	}
 
 	if err := ctx.ShouldBindJSON(&req); err != nil {
 		ctx.JSON(http.StatusBadRequest, apiRes.BadRequestResponse(err.Error()))

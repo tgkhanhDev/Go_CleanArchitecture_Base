@@ -11,7 +11,7 @@ type UserDetailsResponse struct {
 	CreatedAt string `json:"created_at"`
 }
 
-func of(user model.User) UserDetailsResponse {
+func Of(user model.User) UserDetailsResponse {
 	return UserDetailsResponse{
 		ID:        user.ID,
 		Username:  user.Username,
