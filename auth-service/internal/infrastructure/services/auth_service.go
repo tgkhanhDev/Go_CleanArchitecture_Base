@@ -1,6 +1,8 @@
 package service
 
-import "gin/internal/repository"
+import (
+	repository "gin/internal/application/interface/repositories"
+)
 
 type AuthService struct {
 	repo repository.UserRepository

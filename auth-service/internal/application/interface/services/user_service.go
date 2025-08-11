@@ -1,8 +1,8 @@
-package inbound
+package services
 
 import (
-	req "gin/internal/dto/request"
-	res "gin/internal/dto/response"
+	req "gin/internal.bak/dto/request"
+	res "gin/internal.bak/dto/response"
 )
 
 type UserService interface {

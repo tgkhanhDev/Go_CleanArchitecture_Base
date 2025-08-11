@@ -2,12 +2,12 @@ package persistence
 
 import (
 	"database/sql"
-	model "gin/internal/models"
-	"gin/internal/repository"
+	repository "gin/internal/application/interface/repositories"
+	model "gin/internal/domain/entities"
 )
 
 type PgUserRepository struct {
-	// db *gorm.DB // Uncomment if you need a database connection
+	// db *gorm.DB // Uncomment if you need a databases connection
 	DB *sql.DB
 }
 

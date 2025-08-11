@@ -1,6 +1,8 @@
 package http
 
-import model "gin/internal/models"
+import (
+	model "gin/internal/domain/entities"
+)
 
 type UserDetailsResponse struct {
 	ID        uint   `json:"id"`

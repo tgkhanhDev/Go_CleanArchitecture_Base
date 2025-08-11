@@ -1,9 +1,9 @@
-package controller
+package controllers
 
 import (
-	dto2 "gin/internal/dto"
-	dto "gin/internal/dto/request"
-	service "gin/internal/service/impl"
+	request "gin/internal/application/dtos/request"
+	service "gin/internal/infrastructure/services"
+	apiRes "gin/pkg/response"
 	"github.com/gin-gonic/gin"
 	"io"
 	"net/http"
@@ -19,7 +19,7 @@ func NewAuthController(authService service.AuthService) *AuthController {
 
 func (ac *AuthController) LoginHandler(ctx *gin.Context) {
 
-	var req dto.LoginRequest
+	var req request.LoginRequest
 
 	// Check body rỗng
 	bodyBytes, _ := io.ReadAll(ctx.Request.Body)
@@ -31,14 +31,14 @@ func (ac *AuthController) LoginHandler(ctx *gin.Context) {
 	}
 
 	if err := ctx.ShouldBindJSON(&req); err != nil {
-		ctx.JSON(http.StatusBadRequest, dto2.BadRequestResponse(err.Error()))
+		ctx.JSON(http.StatusBadRequest, apiRes.BadRequestResponse(err.Error()))
 		return
 	}
 
-	// gọi service xử lý
+	// gọi services xử lý
 	result, err := ac.authService.Login(req.Username, req.Password)
 	if err != nil {
-		ctx.JSON(http.StatusBadRequest, dto2.BadRequestResponse(err.Error()))
+		ctx.JSON(http.StatusBadRequest, apiRes.BadRequestResponse(err.Error()))
 		return
 	}
 

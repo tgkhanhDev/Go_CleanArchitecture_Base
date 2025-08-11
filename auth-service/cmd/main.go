@@ -2,11 +2,11 @@ package main
 
 import (
 	"database/sql"
-	"gin/internal/config"
-	"gin/internal/controller"
-	persistence "gin/internal/repository/impl"
-	"gin/internal/router"
-	service "gin/internal/service/impl"
+	"gin/internal/api"
+	controller "gin/internal/api/controllers"
+	persistence "gin/internal/infrastructure/persistence"
+	"gin/internal/infrastructure/persistence/databases"
+	service "gin/internal/infrastructure/services"
 	_ "github.com/lib/pq"
 	"log"
 )
@@ -29,9 +29,13 @@ func main() {
 	authController := controller.NewAuthController(*authService)
 
 	// 5. Route
-	r := router.SetupRouter(router.RouterConfig{
-		AuthController: authController,
-	})
+	r := api.NewRouter(authController)
+	r.RegisterRoutes()
 
-	r.Run() // listen and serve on 0.0.0.0:8080
+	// 6. Start the server
+	log.Println("Starting server on port :8080")
+	if err := r.Serve(":8080"); err != nil {
+		log.Fatalf("could not start server: %s", err)
+	}
+
 }

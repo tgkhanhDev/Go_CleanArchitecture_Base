@@ -1,4 +1,4 @@
-package inbound
+package services
 
 type AuthService interface {
 	Login(username, password string) (string, error)
