@@ -7,6 +7,7 @@ import (
 	"gin/internal/infrastructure/persistence/databases"
 	service "gin/internal/infrastructure/services"
 	_ "github.com/lib/pq"
+	"go.uber.org/zap"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"log"
@@ -14,11 +15,17 @@ import (
 
 func main() {
 
-	cfg := config.LoadDatabaseConfig()
+	//log initialization
+	logger, _ := zap.NewDevelopment()
+	defer logger.Sync()
+	// Chuyển sang SugaredLogger để có API tiện lợi hơn
+	sugar := logger.Sugar()
 
+	// DB
+	cfg := config.LoadDatabaseConfig()
 	db, err := gorm.Open(postgres.Open(cfg.GetPostgresDSN()), &gorm.Config{})
 	if err != nil {
-		log.Fatal(err)
+		sugar.Fatal(err)
 	}
 
 	//Manual Dependency Injection

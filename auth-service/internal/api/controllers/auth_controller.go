@@ -6,6 +6,8 @@ import (
 	apiRes "gin/pkg/response"
 	"gin/pkg/validator"
 	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
+	"gorm.io/gorm/logger"
 	"net/http"
 )
 
@@ -55,4 +57,9 @@ func (ac *AuthController) RegisterHandler(ctx *gin.Context) {
 
 	// trả về kết quả
 	ctx.JSON(http.StatusOK, gin.H{"user": result})
+}
+
+func (ac *AuthController) ErrorHandler(ctx *gin.Context) {
+	//sugar := logger.Sugar()
+	//sugar.Error("An error occurred while processing the request")
 }
