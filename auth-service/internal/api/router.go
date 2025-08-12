@@ -32,7 +32,7 @@ func (r *Router) RegisterRoutes() {
 		authGroup := apiGroup.Group("/auth")
 		{
 			authGroup.POST("/login", r.authController.LoginHandler)
-			// authGroup.POST("/register", r.authController.RegisterHandler)
+			authGroup.POST("/register", r.authController.RegisterHandler)
 		}
 
 		// userGroup := apiGroup.Group("/users")

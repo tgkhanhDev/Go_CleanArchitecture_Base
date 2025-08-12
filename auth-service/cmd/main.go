@@ -1,13 +1,14 @@
 package main
 
 import (
-	"database/sql"
 	"gin/internal/api"
 	controller "gin/internal/api/controllers"
 	persistence "gin/internal/infrastructure/persistence"
 	"gin/internal/infrastructure/persistence/databases"
 	service "gin/internal/infrastructure/services"
 	_ "github.com/lib/pq"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 	"log"
 )
 
@@ -15,11 +16,10 @@ func main() {
 
 	cfg := config.LoadDatabaseConfig()
 
-	db, err := sql.Open("postgres", cfg.GetPostgresDSN())
+	db, err := gorm.Open(postgres.Open(cfg.GetPostgresDSN()), &gorm.Config{})
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer db.Close()
 
 	//Manual Dependency Injection
 	userRepo := persistence.NewUserRepository(db)

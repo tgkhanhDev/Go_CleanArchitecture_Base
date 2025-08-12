@@ -22,9 +22,7 @@ func (a AuthService) RegisterUser(registerReq request.RegisterRequest) (http.Use
 	}
 	user, err = a.repo.Save(user)
 
-	return http.Of(user), err
-	//TODO implement me
-	panic("implement me")
+	return http.UserDetailsResponse{}.OfUser(user), err
 }
 
 func (a AuthService) Login(username, password string) (string, error) {

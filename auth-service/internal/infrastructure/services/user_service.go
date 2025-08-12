@@ -22,12 +22,12 @@ func (u UserService) CreateUser(request request.UserCreateRequest) (response.Use
 		Email:        request.Email,
 		PasswordHash: hashedPassword,
 	}
-	err = u.repository.Save(&user)
+	userCreated, err := u.repository.Save(&user)
 	if err != nil {
 		return response.UserDetailsResponse{}, err
 	}
 	return response.UserDetailsResponse{
-		Username: user.Username,
-		Email:    user.Email,
+		Username: userCreated.Username,
+		Email:    userCreated.Email,
 	}, nil
 }
