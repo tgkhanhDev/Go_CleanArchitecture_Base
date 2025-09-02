@@ -1,0 +1,20 @@
+runtime: go124
+api_version: go1
+
+#File path
+env_vars:
+  APP_NAME: go-ftp-server
+  PUBLIC_FILE_PATH:  assets/public
+  PRIVATE_FILE_PATH: assets/private
+  APP_PORT: "8080"
+
+  database_config:
+    DB_HOST: postgres.trangiangkhanh.online
+    DB_PORT: "5432"
+    DB_USER: postgres
+    DB_PASSWORD: 170504
+    DB_NAME: SEP_Auth
+
+handlers:
+- url: /.*
+  script: _go_app

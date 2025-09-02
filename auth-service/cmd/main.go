@@ -1,48 +1,27 @@
 package main
 
 import (
-	"gin/internal/api"
-	controller "gin/internal/api/controllers"
-	persistence "gin/internal/infrastructure/persistence"
-	"gin/internal/infrastructure/persistence/databases"
-	service "gin/internal/infrastructure/services"
-	_ "github.com/lib/pq"
-	"go.uber.org/zap"
-	"gorm.io/driver/postgres"
-	"gorm.io/gorm"
-	"log"
+	"AuthService/config"
 )
 
 func main() {
-
-	//log initialization
-	logger, _ := zap.NewDevelopment()
-	defer logger.Sync()
-	// Chuyển sang SugaredLogger để có API tiện lợi hơn
-	sugar := logger.Sugar()
-
-	// DB
-	cfg := config.LoadDatabaseConfig()
-	db, err := gorm.Open(postgres.Open(cfg.GetPostgresDSN()), &gorm.Config{})
+	server, err := InitializeServer()
+	log := server.Logger
 	if err != nil {
-		sugar.Fatal(err)
+		log.Error("Failed to initialize server: " + err.Error())
+		return
 	}
 
-	//Manual Dependency Injection
-	userRepo := persistence.NewUserRepository(db)
-	// 3. Service
-	authService := service.NewAuthService(userRepo)
-	// 4. Controller
-	authController := controller.NewAuthController(*authService)
-
-	// 5. Route
-	r := api.NewRouter(authController)
-	r.RegisterRoutes()
-
-	// 6. Start the server
-	log.Println("Starting server on port :8080")
-	if err := r.Serve(":8080"); err != nil {
-		log.Fatalf("could not start server: %s", err)
+	// Start the server
+	envConfig := config.GetConfig()
+	port := envConfig.AppPort
+	if port == "" {
+		port = "8080"
+		log.Info("Defaulting to port " + port)
 	}
-
+	log.Info("Listening on port " + port)
+	router := server.Router
+	if err := router.Serve(":" + port); err != nil {
+		log.Info("could not start server: " + err.Error())
+	}
 }

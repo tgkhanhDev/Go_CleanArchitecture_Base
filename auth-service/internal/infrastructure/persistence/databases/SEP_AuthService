@@ -1,0 +1,53 @@
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+CREATE EXTENSION IF NOT EXISTS citext;
+
+-- === Bảng role
+CREATE TABLE role (
+    id              VARCHAR(20) PRIMARY KEY,
+    description     TEXT,
+    is_mandatory    BOOLEAN
+);
+
+-- === Bảng account (đăng nhập, xác thực)
+CREATE TABLE account (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email           VARCHAR(255) UNIQUE NOT NULL,
+    password_hash   VARCHAR(255) NOT NULL,
+    is_active       BOOLEAN DEFAULT TRUE,
+    role_id         VARCHAR(20) REFERENCES role(id),
+    created_at      TIMESTAMP DEFAULT NOW(),
+    updated_at      TIMESTAMP DEFAULT NOW()
+);
+
+-- === Bảng account_role
+CREATE TABLE account_role (
+    account_id  UUID NOT NULL REFERENCES account(id) ON DELETE CASCADE,
+    role_id     VARCHAR(20) NOT NULL REFERENCES role(id) ON DELETE CASCADE,
+    assigned_time TIMESTAMP DEFAULT NOW(),
+    assigned_by UUID REFERENCES account(id),
+    effect_date TIMESTAMP,
+    end_date	TIMESTAMP,
+    PRIMARY KEY (account_id, role_id)
+);
+
+-- === Bảng user (profile người dùng)
+CREATE TABLE "user" (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    account_id      UUID UNIQUE NOT NULL REFERENCES account(id) ON DELETE CASCADE,
+    full_name       VARCHAR(255),
+    phone           VARCHAR(50),
+    avatar_url      TEXT,
+    bio             TEXT,
+    updated_at      TIMESTAMP DEFAULT NOW()
+);
+
+-- === Bảng auth_token (lưu refresh token / access token dài hạn)
+CREATE TABLE auth_token (
+    id              BIGSERIAL PRIMARY KEY,
+    account_id      UUID REFERENCES account(id) ON DELETE CASCADE,
+    token           TEXT NOT NULL,
+    token_type      VARCHAR(20) NOT NULL, -- e.g. "refresh"
+    is_revoked      BOOLEAN DEFAULT FALSE,
+    expires_at      TIMESTAMP NOT NULL,
+    created_at      TIMESTAMP DEFAULT NOW()
+);
