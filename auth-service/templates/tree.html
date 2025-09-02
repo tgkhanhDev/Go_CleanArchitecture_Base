@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Folder Tree</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js cho toggle -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body class="bg-gray-50 p-6 font-sans">
+<h1 class="text-2xl font-bold mb-4">📂 Folder Tree</h1>
+<div class="bg-white shadow rounded-lg p-4">
+    {{template "node" .Root}}
+</div>
+</body>
+</html>
+
+{{define "node"}}
+<ul class="ml-4 border-l border-gray-300 pl-3">
+    <li class="mb-1">
+        {{if .IsDir}}
+        <div x-data="{ open: true }">
+            <!-- Click để toggle -->
+            <div @click="open = !open" class="flex items-center space-x-1 text-blue-600 font-semibold cursor-pointer select-none">
+                <span x-text="open ? '📂' : '📁'"></span>
+                <span>{{.Name}}</span>
+            </div>
+
+            <!-- Children hiển thị khi open -->
+            <div x-show="open" class="ml-4" x-transition>
+                {{range .Children}}
+                {{template "node" .}}
+                {{end}}
+            </div>
+        </div>
+        {{else}}
+        <div class="flex items-center space-x-1 text-gray-700">
+            <span>📄</span>
+            <span>{{.Name}}</span>
+        </div>
+        {{end}}
+    </li>
+</ul>
+{{end}}

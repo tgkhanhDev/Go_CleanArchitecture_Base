@@ -1,42 +1,27 @@
 package main
 
 import (
-	"fmt"
-	"gin/internal/test"
-	"github.com/gin-gonic/gin"
-	"log"
-	"net/http"
+	"AuthService/config"
 )
 
 func main() {
-	var a string = "123"
-	router := gin.Default()
-	fmt.Println("a ne: ", a)
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
-
-	firstRs, err := test.NewRabbitMQTest("1")
+	server, err := InitializeServer()
+	log := server.Logger
 	if err != nil {
-		log.Fatal("firstRs error: ", err)
-	}
-	if firstRs != nil {
-		log.Println("firstRs:", *firstRs)
-	} else {
-		log.Println("firstRs is nil")
+		log.Error("Failed to initialize server: " + err.Error())
+		return
 	}
 
-	secondRs, err := test.NewRabbitMQTest("2")
-	if err != nil {
-		log.Fatal("secondRs error: ", err)
+	// Start the server
+	envConfig := config.GetConfig()
+	port := envConfig.AppPort
+	if port == "" {
+		port = "8080"
+		log.Info("Defaulting to port " + port)
 	}
-	if secondRs != nil {
-		log.Println("secondRs:", *secondRs)
-	} else {
-		log.Println("secondRs is nil")
+	log.Info("Listening on port " + port)
+	router := server.Router
+	if err := router.Serve(":" + port); err != nil {
+		log.Info("could not start server: " + err.Error())
 	}
-
-	router.Run() // listen and serve on 0.0.0.0:8080
 }

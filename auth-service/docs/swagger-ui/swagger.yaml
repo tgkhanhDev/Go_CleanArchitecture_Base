@@ -1,0 +1,28 @@
+openapi: 3.0.3
+info:
+  title: Local File Storage API
+  version: 1.0.0
+  description: API for uploading and retrieving image files from local storage
+servers:
+  - url: http://localhost:8080
+paths:
+#TODO: FILE
+  /api/v1/auth/account:
+    get:
+      tags:
+        - Authentication & Authorization
+      summary: Test to get all Accounts
+      responses:
+        '200':
+          description: Get accounts successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  filename:
+                    type: string
+        '500':
+          description: Internal Server Error
