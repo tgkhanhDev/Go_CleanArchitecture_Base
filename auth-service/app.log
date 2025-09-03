@@ -179,3 +179,5 @@ net/http.(*conn).serve
 	/home/tgkhanhdev/go/go1.24.4/src/net/http/server.go:2102
 2025-09-02T19:25:10.796+0700	DEBUG	api/router.go:39	Successfully initialized Router
 2025-09-02T19:25:10.796+0700	INFO	cmd/main.go:22	Listening on port 8080
+2025-09-03T09:41:14.368+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-03T09:41:14.369+0700	INFO	cmd/main.go:22	Listening on port 8080
