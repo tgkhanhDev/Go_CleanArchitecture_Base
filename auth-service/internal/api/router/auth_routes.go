@@ -9,6 +9,8 @@ func RegisterAuthRoute(parentGrp *gin.RouterGroup, ctl *controller.AuthControlle
 	authGroup := parentGrp.Group("/auth")
 	{
 		authGroup.GET("/account", ctl.GetAllAccountsHandler)
-		//parentGrp.POST("/login", ctl.)
+		authGroup.POST("/login", ctl.LoginHandler)
+		authGroup.POST("/register", ctl.RegisterHandler)
+		//parentGrp.POST("/logout", ctl.)
 	}
 }

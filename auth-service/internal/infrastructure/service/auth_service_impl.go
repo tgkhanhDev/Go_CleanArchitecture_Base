@@ -1,29 +1,35 @@
 package service
 
 import (
+	"AuthService/internal/application/dtos/request"
+	"AuthService/internal/application/dtos/response"
+	"AuthService/internal/application/interfaces"
 	"AuthService/internal/application/services"
 	"AuthService/internal/domain/entities"
-	"AuthService/internal/infrastructure/persistence/repositories"
 	"AuthService/pkg/logger"
 	"context"
+	"github.com/golang-jwt/jwt/v5"
+	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
+	"os"
+	"time"
 )
 
 type authServiceImpl struct {
-	accountGen repositories.GenericRepository[entities.Account]
-	db         *gorm.DB
+	accountRepo interfaces.GenericRepository[entities.Account]
+	db          *gorm.DB
 }
 
-func NewAuthService(db *gorm.DB, accountGen repositories.GenericRepository[entities.Account]) services.AuthService {
+func NewAuthService(db *gorm.DB, accountRepo interfaces.GenericRepository[entities.Account]) services.AuthService {
 	return &authServiceImpl{
-		db:         db,
-		accountGen: accountGen,
+		db:          db,
+		accountRepo: accountRepo,
 	}
 }
 
 func (a *authServiceImpl) GetAllAccounts() ([]entities.Account, error) {
 	ctx := context.Background()
-	accounts, _, err := a.accountGen.GetAll(ctx, nil, []string{"Roles"}, 0, 0)
+	accounts, _, err := a.accountRepo.GetAll(ctx, nil, nil, 0, 0)
 	if err != nil {
 		log := logger.GetLogger()
 		log.Error("Error fetching accounts: " + err.Error())
@@ -32,26 +38,67 @@ func (a *authServiceImpl) GetAllAccounts() ([]entities.Account, error) {
 	return accounts, nil
 }
 
-func (a *authServiceImpl) Login(username, password string) (*entities.Account, error) {
-	// Assuming username is email
-	//account, err := a.db.FindByEmail(username)
-	//if err != nil {
-	//	return nil, err
-	//}
-	//// TODO: Replace with real password hash check
-	//if account.PasswordHash != password {
-	//	return nil, errors.New("invalid credentials")
-	//}
-	return nil, nil
+var jwtSecret = []byte(os.Getenv("JWT_SECRET"))
+
+func generateToken(account *entities.Account, duration time.Duration) (string, int64, error) {
+	expiresAt := time.Now().Add(duration).Unix()
+	claims := jwt.MapClaims{
+		"sub":   account.ID.String(),
+		"email": account.Email,
+		"exp":   expiresAt,
+	}
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+	signedToken, err := token.SignedString(jwtSecret)
+	if err != nil {
+		return "", 0, err
+	}
+	return signedToken, expiresAt, nil
 }
 
-func (a *authServiceImpl) CreateAccount(account *entities.Account) (*entities.Account, error) {
-	// You may want to hash the password here
-	// TODO: Add password hashing
-	//created, err := a.accountRepo.Save(account)
-	//if err != nil {
-	//	return nil, err
-	//}
-	//return created, nil
-	panic("not implemented")
+func (a *authServiceImpl) Login(request request.LoginRequest) (*response.LoginResponse, error) {
+	ctx := context.Background()
+	filter := func(db *gorm.DB) *gorm.DB {
+		return db.Where("email = ?", request.Email)
+	}
+	account, err := a.accountRepo.GetByCondition(ctx, filter, nil, false)
+	if err != nil {
+		return nil, err
+	}
+	if err := bcrypt.CompareHashAndPassword([]byte(account.PasswordHash), []byte(request.Password)); err != nil {
+		return nil, err
+	}
+	accessToken, expiresAt, err := generateToken(account, 15*time.Minute)
+	if err != nil {
+		return nil, err
+	}
+	refreshToken, _, err := generateToken(account, 7*24*time.Hour)
+	if err != nil {
+		return nil, err
+	}
+	resp := &response.LoginResponse{
+		AccessToken:  accessToken,
+		ExpiresAt:    expiresAt,
+		RefreshToken: refreshToken,
+	}
+	return resp, nil
+}
+
+func (a *authServiceImpl) CreateAccount(account request.CreateAccountRequest) (*entities.Account, error) {
+	// Hash the password before saving
+	hash, err := bcrypt.GenerateFromPassword([]byte(account.PasswordHash), bcrypt.DefaultCost)
+	if err != nil {
+		return nil, err
+	}
+
+	accountModel := &entities.Account{
+		Email:        account.Email,
+		PasswordHash: string(hash),
+		Role:         "CUSTOMER",
+		IsActive:     true,
+	}
+
+	if err := a.db.Create(accountModel).Error; err != nil {
+		return nil, err
+	}
+	return nil, nil
 }

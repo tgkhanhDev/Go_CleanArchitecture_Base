@@ -7,6 +7,7 @@ import (
 	"AuthService/config"
 	"AuthService/internal/api"
 	"AuthService/internal/api/controller"
+	"AuthService/internal/application/interfaces"
 	"AuthService/internal/domain/entities"
 	"AuthService/internal/infrastructure/persistence/databases"
 	"AuthService/internal/infrastructure/persistence/repositories"
@@ -54,7 +55,7 @@ func NewServer(router *api.Router, db *gorm.DB, log *zap.Logger) *Server {
 }
 
 // GENERIC PROVIDER
-func ProvideGenericAccountRepository(db *gorm.DB) repositories.GenericRepository[entities.Account] {
+func ProvideGenericAccountRepository(db *gorm.DB) interfaces.GenericRepository[entities.Account] {
 	return repositories.NewGenericRepository[entities.Account](db)
 }
 
@@ -66,19 +67,16 @@ var InfrastructureSet = wire.NewSet(
 	ProvideLogger,
 	ProvideDB,
 	ProvideGenericAccountRepository,
-	repositories.NewUserRepository,
 )
 
 // ApplicationSet cung cấp các service/use-case của tầng application
 var ApplicationSet = wire.NewSet(
 	service.NewAuthService,
-	service.NewUserService,
 )
 
 // APISet cung cấp các controller và router
 var APISet = wire.NewSet(
 	controller.NewAuthController,
-	controller.NewUserController,
 	api.NewRouter,
 )
 

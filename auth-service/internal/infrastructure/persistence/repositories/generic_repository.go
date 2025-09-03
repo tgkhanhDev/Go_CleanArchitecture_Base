@@ -17,8 +17,6 @@ func NewGenericRepository[T any](db *gorm.DB) interfaces.GenericRepository[T] {
 
 // GetAll với filter + include + paging
 func (r *genericRepository[T]) GetAll(ctx context.Context, filter func(*gorm.DB) *gorm.DB, includes []string, pageSize, pageNumber int) ([]T, int64, error) {
-	r.db.Transaction()
-
 	var items []T
 	var total int64
 
