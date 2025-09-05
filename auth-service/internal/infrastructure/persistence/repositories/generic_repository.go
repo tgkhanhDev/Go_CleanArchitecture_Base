@@ -2,7 +2,7 @@ package repositories
 
 import (
 	"AuthService/internal/application/interfaces"
-	"context"
+	"golang.org/x/net/context"
 	"gorm.io/gorm"
 )
 

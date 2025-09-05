@@ -6,7 +6,7 @@ env_vars:
   APP_NAME: go-ftp-server
   PUBLIC_FILE_PATH:  assets/public
   PRIVATE_FILE_PATH: assets/private
-  APP_PORT: "8080"
+  APP_PORT: "8081"
 
   database_config:
     DB_HOST: postgres.trangiangkhanh.online
@@ -14,6 +14,8 @@ env_vars:
     DB_USER: postgres
     DB_PASSWORD: 170504
     DB_NAME: SEP_Auth
+
+  JWT_SECRET: csn9sAbenVY2fbQGIm1zhXR6V9VuaCRev7hNOCXCLxQna6nd4pvwZjUgLgJ4z1FyxBjCdt4ohB9TEA5qInz85T3fdvBDq0L0hFbWWJB7chVf7vzjAYQvYu5BNSQ0cgo9
 
 handlers:
 - url: /.*

@@ -30,3 +30,16 @@
 2025-09-05T05:32:14.234+0700	DEBUG	service/auth_service_impl.go:70	Request Pwd: 123123
 2025-09-05T05:50:47.044+0700	DEBUG	api/router.go:39	Successfully initialized Router
 2025-09-05T05:50:47.044+0700	INFO	cmd/main.go:22	Listening on port 8080
+2025-09-05T09:17:59.935+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T09:17:59.936+0700	INFO	cmd/main.go:23	Listening on port 8081
+2025-09-05T09:18:01.198+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T09:18:01.198+0700	INFO	cmd/main.go:23	Listening on port 8081
+2025-09-05T09:18:01.199+0700	INFO	cmd/main.go:26	could not start server: listen tcp :8081: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2025-09-05T09:20:31.548+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T09:20:31.549+0700	INFO	cmd/main.go:23	Listening on port 8081
+2025-09-05T09:28:34.354+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T09:28:34.356+0700	INFO	cmd/main.go:23	Listening on port 8081
+2025-09-05T16:53:23.327+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T16:53:23.329+0700	INFO	cmd/main.go:23	Listening on port 8081
+2025-09-05T17:29:41.131+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T17:29:41.133+0700	INFO	cmd/main.go:23	Listening on port 8081

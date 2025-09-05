@@ -19,6 +19,7 @@ func main() {
 		port = "8080"
 		log.Info("Defaulting to port " + port)
 	}
+
 	log.Info("Listening on port " + port)
 	router := server.Router
 	if err := router.Serve(":" + port); err != nil {

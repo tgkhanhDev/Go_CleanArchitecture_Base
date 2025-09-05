@@ -1,6 +1,7 @@
 package service
 
 import (
+	"AuthService/config"
 	"AuthService/internal/application/dtos/request"
 	"AuthService/internal/application/dtos/response"
 	"AuthService/internal/application/interfaces"
@@ -12,7 +13,6 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
-	"os"
 	"time"
 )
 
@@ -39,8 +39,6 @@ func (a *authServiceImpl) GetAllAccounts() ([]entities.Account, error) {
 	return accounts, nil
 }
 
-var jwtSecret = []byte(os.Getenv("JWT_SECRET"))
-
 func generateToken(account *entities.Account, duration time.Duration) (string, int64, error) {
 	expiresAt := time.Now().Add(duration).Unix()
 	claims := jwt.MapClaims{
@@ -49,6 +47,8 @@ func generateToken(account *entities.Account, duration time.Duration) (string, i
 		"exp":   expiresAt,
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+
+	jwtSecret := config.GetConfig().JwtSecretKey
 	signedToken, err := token.SignedString(jwtSecret)
 	if err != nil {
 		return "", 0, err

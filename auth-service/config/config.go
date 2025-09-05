@@ -10,7 +10,7 @@ type EnvProps struct {
 	PublicFilePath  string `mapstructure:"PUBLIC_FILE_PATH"`
 	PrivateFilePath string `mapstructure:"PRIVATE_FILE_PATH"`
 	AppPort         string `mapstructure:"APP_PORT"`
-
+	JwtSecretKey    string `mapstructure:"JWT_SECRET"`
 	//DB Configs
 	databases.DatabaseProps `mapstructure:",squash"`
 }
