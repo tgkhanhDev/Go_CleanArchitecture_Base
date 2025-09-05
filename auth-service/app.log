@@ -1,226 +1,32 @@
-2025-08-23T13:16:16.127+0700	FATAL	cmd/main.go:34	Defaulting to port 8080
-main.main
-	/home/tgkhanhdev/Desktop/Project/GoFTP/cmd/main.go:34
-runtime.main
-	/home/tgkhanhdev/go/go1.24.4/src/runtime/proc.go:283
-2025-08-23T13:20:14.060+0700	FATAL	cmd/main.go:34	Defaulting to port 8080
-main.main
-	/home/tgkhanhdev/Desktop/Project/GoFTP/cmd/main.go:34
-runtime.main
-	/home/tgkhanhdev/go/go1.24.4/src/runtime/proc.go:283
-2025-08-23T13:21:29.735+0700	FATAL	cmd/main.go:34	Defaulting to port 8080
-main.main
-	/home/tgkhanhdev/Desktop/Project/GoFTP/cmd/main.go:34
-runtime.main
-	/home/tgkhanhdev/go/go1.24.4/src/runtime/proc.go:283
-2025-08-23T13:21:49.255+0700	FATAL	cmd/main.go:34	Defaulting to port 8080
-main.main
-	/home/tgkhanhdev/Desktop/Project/GoFTP/cmd/main.go:34
-runtime.main
-	/home/tgkhanhdev/go/go1.24.4/src/runtime/proc.go:283
-2025-08-23T13:21:53.004+0700	FATAL	cmd/main.go:34	Defaulting to port 8080
-main.main
-	/home/tgkhanhdev/Desktop/Project/GoFTP/cmd/main.go:34
-runtime.main
-	/home/tgkhanhdev/go/go1.24.4/src/runtime/proc.go:283
-2025-08-23T13:24:25.578+0700	INFO	cmd/main.go:34	Defaulting to port 8080
-2025-08-23T13:24:25.578+0700	INFO	cmd/main.go:37	Listening on port 8080
-2025-08-23T13:24:25.578+0700	INFO	cmd/main.go:38	Open http://localhost:%s in the browser 8080
-2025-08-23T13:24:39.901+0700	INFO	cmd/main.go:34	Defaulting to port 8080
-2025-08-23T13:24:39.901+0700	INFO	cmd/main.go:37	Listening on port 8080
-2025-08-23T13:24:39.901+0700	INFO	cmd/main.go:38	Open http://localhost:%s in the browser 8080
-2025-08-23T13:29:26.022+0700	FATAL	config/config.go:33	ahihi: result must be a pointer
-ImageServer/config.LoadEnvConfig
-	/home/tgkhanhdev/Desktop/Project/GoFTP/config/config.go:33
-main.main
-	/home/tgkhanhdev/Desktop/Project/GoFTP/cmd/main.go:14
-runtime.main
-	/home/tgkhanhdev/go/go1.24.4/src/runtime/proc.go:283
-2025-08-23T13:32:49.558+0700	DEBUG	config/config.go:35	ahihi: result must be a pointer
-2025-08-23T13:32:49.559+0700	INFO	cmd/main.go:37	Defaulting to port 8080
-2025-08-23T13:32:49.559+0700	INFO	cmd/main.go:40	Listening on port 8080
-2025-08-23T13:32:49.559+0700	INFO	cmd/main.go:41	Open http://localhost:%s in the browser 8080
-2025-08-23T13:36:37.000+0700	DEBUG	config/config.go:35	ahihi: result must be a pointer
-2025-08-23T13:36:37.000+0700	INFO	cmd/main.go:37	Defaulting to port 8080
-2025-08-23T13:36:37.000+0700	INFO	cmd/main.go:40	Listening on port 8080
-2025-08-23T13:36:37.000+0700	INFO	cmd/main.go:41	Open http://localhost:%s in the browser 8080
-2025-08-23T13:42:49.962+0700	INFO	cmd/main.go:38	Defaulting to port 8080
-2025-08-23T13:42:49.962+0700	INFO	cmd/main.go:41	Listening on port 8080
-2025-08-23T13:42:49.962+0700	INFO	cmd/main.go:42	Open http://localhost:%s in the browser 8080
-2025-08-23T13:43:21.582+0700	INFO	cmd/main.go:38	Defaulting to port 8080
-2025-08-23T13:43:21.582+0700	INFO	cmd/main.go:41	Listening on port 8080
-2025-08-23T13:43:21.582+0700	INFO	cmd/main.go:42	Open http://localhost:%s in the browser 8080
-2025-08-23T13:45:20.237+0700	INFO	cmd/main.go:38	Defaulting to port 8080
-2025-08-23T13:45:20.237+0700	INFO	cmd/main.go:41	Listening on port 8080
-2025-08-23T13:45:20.237+0700	INFO	cmd/main.go:42	Open http://localhost:%s in the browser 8080
-2025-08-23T17:04:15.922+0700	DEBUG	cmd/initializer.go:40	Successfully initialized FileController
-2025-08-23T17:04:15.922+0700	DEBUG	cmd/initializer.go:28	Successfully initialized Router
-2025-08-23T17:04:15.922+0700	INFO	cmd/main.go:31	Listening on port 8080
-2025-08-23T17:11:00.259+0700	ERROR	config/config.go:25	Failed to read config file: test
-ImageServer/config.LoadEnvConfig
-	/home/tgkhanhdev/Desktop/Project/GoFTP/config/config.go:25
-main.main
-	/home/tgkhanhdev/Desktop/Project/GoFTP/cmd/main.go:14
-runtime.main
-	/home/tgkhanhdev/go/go1.24.4/src/runtime/proc.go:283
-2025-08-23T17:11:00.259+0700	DEBUG	cmd/initializer.go:40	Successfully initialized FileController
-2025-08-23T17:11:00.259+0700	DEBUG	cmd/initializer.go:28	Successfully initialized Router
-2025-08-23T17:11:00.259+0700	INFO	cmd/main.go:31	Listening on port 8080
-2025-08-23T17:12:26.008+0700	ERROR	config/config.go:26	Failed to read config file: Unsupported Config Type "yaml17"
-ImageServer/config.LoadEnvConfig
-	/home/tgkhanhdev/Desktop/Project/GoFTP/config/config.go:26
-main.main
-	/home/tgkhanhdev/Desktop/Project/GoFTP/cmd/main.go:14
-runtime.main
-	/home/tgkhanhdev/go/go1.24.4/src/runtime/proc.go:283
-2025-08-24T15:39:42.440+0700	DEBUG	cmd/initializer.go:40	Successfully initialized FileController
-2025-08-24T15:39:42.441+0700	DEBUG	cmd/initializer.go:28	Successfully initialized Router
-2025-08-24T15:39:42.441+0700	INFO	cmd/main.go:31	Listening on port 8080
-2025-08-26T00:23:30.966+0700	DEBUG	api/router.go:30	Successfully initialized Router
-2025-08-26T00:23:31.342+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-08-26T23:13:20.914+0700	DEBUG	api/router.go:30	Successfully initialized Router
-2025-08-26T23:13:21.347+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-08-26T23:17:06.560+0700	DEBUG	api/router.go:30	Successfully initialized Router
-2025-08-26T23:17:06.926+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-08-27T10:57:26.078+0700	DEBUG	api/router.go:33	Successfully initialized Router
-2025-08-27T10:57:26.079+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-08-27T11:07:24.970+0700	DEBUG	api/router.go:33	Successfully initialized Router
-2025-08-27T11:07:24.971+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-08-27T11:13:09.304+0700	DEBUG	api/router.go:33	Successfully initialized Router
-2025-08-27T11:13:09.306+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-08-27T11:14:51.237+0700	DEBUG	api/router.go:33	Successfully initialized Router
-2025-08-27T11:14:51.238+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-08-27T21:12:04.713+0700	DEBUG	api/router.go:33	Successfully initialized Router
-2025-08-27T21:12:04.713+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-08-27T21:49:56.728+0700	DEBUG	api/router.go:33	Successfully initialized Router
-2025-08-27T21:49:56.729+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-08-27T22:08:32.722+0700	DEBUG	api/router.go:33	Successfully initialized Router
-2025-08-27T22:08:32.722+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-02T18:26:12.777+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-02T18:26:12.788+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-02T18:51:50.168+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-02T18:51:50.168+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-02T18:54:16.385+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-02T18:54:16.385+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-02T18:54:23.267+0700	ERROR	service/auth_service_impl.go:29	Error fetching accounts: ERROR: relation "accounts" does not exist (SQLSTATE 42P01)
-AuthService/internal/infrastructure/service.(*authServiceImpl).GetAllAccounts
-	/home/tgkhanhdev/Desktop/Project/GoLang_Projects/AuthService/internal/infrastructure/service/auth_service_impl.go:29
-AuthService/internal/api/controller.(*AuthController).GetAllAccountsHandler
-	/home/tgkhanhdev/Desktop/Project/GoLang_Projects/AuthService/internal/api/controller/auth_controller.go:21
-github.com/gin-gonic/gin.(*Context).Next
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185
-github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102
-github.com/gin-gonic/gin.(*Context).Next
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185
-github.com/gin-gonic/gin.LoggerWithConfig.func1
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249
-github.com/gin-gonic/gin.(*Context).Next
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185
-github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644
-github.com/gin-gonic/gin.(*Engine).ServeHTTP
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600
-net/http.serverHandler.ServeHTTP
-	/home/tgkhanhdev/go/go1.24.4/src/net/http/server.go:3301
-net/http.(*conn).serve
-	/home/tgkhanhdev/go/go1.24.4/src/net/http/server.go:2102
-2025-09-02T18:57:22.254+0700	ERROR	service/auth_service_impl.go:29	Error fetching accounts: ERROR: relation "accounts" does not exist (SQLSTATE 42P01)
-AuthService/internal/infrastructure/service.(*authServiceImpl).GetAllAccounts
-	/home/tgkhanhdev/Desktop/Project/GoLang_Projects/AuthService/internal/infrastructure/service/auth_service_impl.go:29
-AuthService/internal/api/controller.(*AuthController).GetAllAccountsHandler
-	/home/tgkhanhdev/Desktop/Project/GoLang_Projects/AuthService/internal/api/controller/auth_controller.go:21
-github.com/gin-gonic/gin.(*Context).Next
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185
-github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102
-github.com/gin-gonic/gin.(*Context).Next
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185
-github.com/gin-gonic/gin.LoggerWithConfig.func1
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249
-github.com/gin-gonic/gin.(*Context).Next
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185
-github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644
-github.com/gin-gonic/gin.(*Engine).ServeHTTP
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600
-net/http.serverHandler.ServeHTTP
-	/home/tgkhanhdev/go/go1.24.4/src/net/http/server.go:3301
-net/http.(*conn).serve
-	/home/tgkhanhdev/go/go1.24.4/src/net/http/server.go:2102
-2025-09-02T19:15:28.299+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-02T19:15:28.299+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-02T19:16:45.600+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-02T19:16:45.600+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-02T19:22:10.900+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-02T19:22:10.900+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-02T19:22:20.700+0700	ERROR	service/auth_service_impl.go:29	Error fetching accounts: account_roles: unsupported relations for schema Account
-AuthService/internal/infrastructure/service.(*authServiceImpl).GetAllAccounts
-	/home/tgkhanhdev/Desktop/Project/GoLang_Projects/AuthService/internal/infrastructure/service/auth_service_impl.go:29
-AuthService/internal/api/controller.(*AuthController).GetAllAccountsHandler
-	/home/tgkhanhdev/Desktop/Project/GoLang_Projects/AuthService/internal/api/controller/auth_controller.go:21
-github.com/gin-gonic/gin.(*Context).Next
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185
-github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102
-github.com/gin-gonic/gin.(*Context).Next
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185
-github.com/gin-gonic/gin.LoggerWithConfig.func1
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249
-github.com/gin-gonic/gin.(*Context).Next
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185
-github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644
-github.com/gin-gonic/gin.(*Engine).ServeHTTP
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600
-net/http.serverHandler.ServeHTTP
-	/home/tgkhanhdev/go/go1.24.4/src/net/http/server.go:3301
-net/http.(*conn).serve
-	/home/tgkhanhdev/go/go1.24.4/src/net/http/server.go:2102
-2025-09-02T19:25:10.796+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-02T19:25:10.796+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-03T09:41:14.368+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-03T09:41:14.369+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-03T20:43:00.371+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-03T20:43:00.371+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-03T20:43:12.196+0700	ERROR	service/auth_service_impl.go:29	Error fetching accounts: Roles: unsupported relations for schema Account
-AuthService/internal/infrastructure/service.(*authServiceImpl).GetAllAccounts
-	/home/tgkhanhdev/Desktop/Project/GoLang_Projects/Go_CleanArchitecture_Base/auth-service/internal/infrastructure/service/auth_service_impl.go:29
-AuthService/internal/api/controller.(*AuthController).GetAllAccountsHandler
-	/home/tgkhanhdev/Desktop/Project/GoLang_Projects/Go_CleanArchitecture_Base/auth-service/internal/api/controller/auth_controller.go:21
-github.com/gin-gonic/gin.(*Context).Next
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185
-github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102
-github.com/gin-gonic/gin.(*Context).Next
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185
-github.com/gin-gonic/gin.LoggerWithConfig.func1
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249
-github.com/gin-gonic/gin.(*Context).Next
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185
-github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644
-github.com/gin-gonic/gin.(*Engine).ServeHTTP
-	/home/tgkhanhdev/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600
-net/http.serverHandler.ServeHTTP
-	/home/tgkhanhdev/go/go1.24.4/src/net/http/server.go:3301
-net/http.(*conn).serve
-	/home/tgkhanhdev/go/go1.24.4/src/net/http/server.go:2102
-2025-09-03T20:43:48.031+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-03T20:43:48.032+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-03T21:17:14.248+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-03T21:17:14.248+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-03T21:18:10.249+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-03T21:18:10.250+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-03T21:32:24.391+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-03T21:32:24.391+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-03T21:36:04.880+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-03T21:36:04.880+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-03T21:47:39.663+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-03T21:47:39.663+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-03T23:34:41.784+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-03T23:34:41.784+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-03T23:35:19.760+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-03T23:35:19.760+0700	INFO	cmd/main.go:22	Listening on port 8080
-2025-09-03T23:38:28.908+0700	DEBUG	api/router.go:39	Successfully initialized Router
-2025-09-03T23:38:28.908+0700	INFO	cmd/main.go:22	Listening on port 8080
+2025-09-05T04:52:22.879+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T04:52:22.879+0700	INFO	cmd/main.go:22	Listening on port 8080
+2025-09-05T04:55:17.266+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T04:55:17.266+0700	INFO	cmd/main.go:22	Listening on port 8080
+2025-09-05T05:05:39.388+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T05:05:39.388+0700	INFO	cmd/main.go:22	Listening on port 8080
+2025-09-05T05:07:11.758+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T05:07:11.758+0700	INFO	cmd/main.go:22	Listening on port 8080
+2025-09-05T05:07:16.941+0700	DEBUG	service/auth_service_impl.go:69	Hashed Pwd: $2a$10$8biSM7JIOeJIYugoHR37JO09VtyDVo1AOL3JvrBEUcpVqsKABkJh6
+2025-09-05T05:07:16.941+0700	DEBUG	service/auth_service_impl.go:70	Request Pwd: 123123
+2025-09-05T05:23:21.033+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T05:23:21.033+0700	INFO	cmd/main.go:22	Listening on port 8080
+2025-09-05T05:23:26.343+0700	DEBUG	service/auth_service_impl.go:69	Hashed Pwd: $2a$10$8biSM7JIOeJIYugoHR37JO09VtyDVo1AOL3JvrBEUcpVqsKABkJh6
+2025-09-05T05:23:26.343+0700	DEBUG	service/auth_service_impl.go:70	Request Pwd: 123123
+2025-09-05T05:24:16.360+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T05:24:16.360+0700	INFO	cmd/main.go:22	Listening on port 8080
+2025-09-05T05:24:20.371+0700	DEBUG	service/auth_service_impl.go:69	Hashed Pwd: $2a$10$8biSM7JIOeJIYugoHR37JO09VtyDVo1AOL3JvrBEUcpVqsKABkJh6
+2025-09-05T05:24:20.371+0700	DEBUG	service/auth_service_impl.go:70	Request Pwd: 123123
+2025-09-05T05:25:53.865+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T05:25:53.941+0700	INFO	cmd/main.go:31	Listening on port 8080
+2025-09-05T05:27:17.074+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T05:27:17.074+0700	INFO	cmd/main.go:22	Listening on port 8080
+2025-09-05T05:28:18.194+0700	DEBUG	service/auth_service_impl.go:69	Hashed Pwd: $2a$10$DJhPvvkKuygVop0bG2Bg.evJZOxLFBbm9wTbCgxKuoNKJRlvruEjO
+2025-09-05T05:28:18.194+0700	DEBUG	service/auth_service_impl.go:70	Request Pwd: 123123
+2025-09-05T05:28:22.306+0700	DEBUG	service/auth_service_impl.go:69	Hashed Pwd: $2a$10$DJhPvvkKuygVop0bG2Bg.evJZOxLFBbm9wTbCgxKuoNKJRlvruEjO
+2025-09-05T05:28:22.306+0700	DEBUG	service/auth_service_impl.go:70	Request Pwd: 123123
+2025-09-05T05:28:23.336+0700	DEBUG	service/auth_service_impl.go:69	Hashed Pwd: $2a$10$DJhPvvkKuygVop0bG2Bg.evJZOxLFBbm9wTbCgxKuoNKJRlvruEjO
+2025-09-05T05:28:23.336+0700	DEBUG	service/auth_service_impl.go:70	Request Pwd: 123123
+2025-09-05T05:32:14.234+0700	DEBUG	service/auth_service_impl.go:69	Hashed Pwd: $2a$10$DJhPvvkKuygVop0bG2Bg.evJZOxLFBbm9wTbCgxKuoNKJRlvruEjO
+2025-09-05T05:32:14.234+0700	DEBUG	service/auth_service_impl.go:70	Request Pwd: 123123
+2025-09-05T05:50:47.044+0700	DEBUG	api/router.go:39	Successfully initialized Router
+2025-09-05T05:50:47.044+0700	INFO	cmd/main.go:22	Listening on port 8080

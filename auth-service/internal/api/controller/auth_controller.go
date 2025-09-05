@@ -55,7 +55,7 @@ func (ac *AuthController) LoginHandler(context *gin.Context) {
 	}
 	loginResp, err := (*ac.authService).Login(loginReq)
 	if err != nil {
-		context.JSON(401, gin.H{"data": nil, "message": "Invalid credentials", "code": 401})
+		context.JSON(401, gin.H{"data": nil, "message": err.Error(), "code": 401})
 		return
 	}
 

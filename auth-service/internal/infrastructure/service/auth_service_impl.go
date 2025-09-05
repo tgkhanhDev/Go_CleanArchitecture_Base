@@ -8,6 +8,7 @@ import (
 	"AuthService/internal/domain/entities"
 	"AuthService/pkg/logger"
 	"context"
+	"errors"
 	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
@@ -65,7 +66,7 @@ func (a *authServiceImpl) Login(request request.LoginRequest) (*response.LoginRe
 		return nil, err
 	}
 	if err := bcrypt.CompareHashAndPassword([]byte(account.PasswordHash), []byte(request.Password)); err != nil {
-		return nil, err
+		return nil, errors.New("invalid email or password")
 	}
 	accessToken, expiresAt, err := generateToken(account, 15*time.Minute)
 	if err != nil {
@@ -83,15 +84,15 @@ func (a *authServiceImpl) Login(request request.LoginRequest) (*response.LoginRe
 	return resp, nil
 }
 
-func (a *authServiceImpl) CreateAccount(account request.CreateAccountRequest) (*entities.Account, error) {
+func (a *authServiceImpl) CreateAccount(req request.CreateAccountRequest) (*entities.Account, error) {
 	// Hash the password before saving
-	hash, err := bcrypt.GenerateFromPassword([]byte(account.PasswordHash), bcrypt.DefaultCost)
+	hash, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
 	if err != nil {
 		return nil, err
 	}
 
 	accountModel := &entities.Account{
-		Email:        account.Email,
+		Email:        req.Email,
 		PasswordHash: string(hash),
 		Role:         "CUSTOMER",
 		IsActive:     true,
